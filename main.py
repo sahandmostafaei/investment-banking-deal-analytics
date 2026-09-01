@@ -31,6 +31,11 @@ from src.utils import (
     format_percentage,
 )
 
+from src.visualization import (
+    plot_revenue_forecast,
+    plot_dcf_sensitivity,
+)
+
 
 def main():
 
@@ -90,7 +95,15 @@ def main():
     print("\nREVENUE FORECAST")
     print("-" * 70)
 
-    print(forecast.to_string(index=False))
+    print(
+        forecast.to_string(index=False)
+    )
+
+    plot_revenue_forecast(
+        historical=financials,
+        forecast=forecast,
+        output_path="figures/revenue_forecast.png",
+    )
 
     # --------------------------------------------------
     # DCF
@@ -268,6 +281,11 @@ def main():
         sensitivity.round(2).to_string()
     )
 
+    plot_dcf_sensitivity(
+        sensitivity,
+        output_path="figures/dcf_sensitivity.png",
+    )
+
     # --------------------------------------------------
     # M&A Accretion / Dilution
     # --------------------------------------------------
@@ -310,7 +328,3 @@ def main():
 
 if __name__ == "__main__":
     main()
- from src.visualization import (
-    plot_revenue_forecast,
-    plot_dcf_sensitivity,
-)
