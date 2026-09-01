@@ -310,3 +310,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+ from src.visualization import (
+    plot_revenue_forecast,
+    plot_dcf_sensitivity,
+)
