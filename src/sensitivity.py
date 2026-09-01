@@ -1,6 +1,6 @@
 import pandas as pd
 
-from dcf import calculate_dcf
+from src.dcf import calculate_dcf
 
 
 def dcf_sensitivity(
