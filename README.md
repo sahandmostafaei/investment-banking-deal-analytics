@@ -4,7 +4,7 @@ A Python-based investment banking analytics platform for financial analysis, val
 
 ## Overview
 
-This project demonstrates the use of Python in investment banking and corporate finance workflows.
+This project demonstrates practical applications of Python in investment banking and corporate finance workflows.
 
 Key areas covered:
 
@@ -13,6 +13,7 @@ Key areas covered:
 - DCF valuation
 - Comparable company analysis
 - Precedent transaction analysis
+- Valuation methodology comparison
 - DCF sensitivity analysis
 - M&A accretion/dilution analysis
 - Financial visualization
@@ -30,7 +31,29 @@ Key areas covered:
 
 ## Project Workflow
 
-Financial Data → Financial Statement Analysis → Revenue Forecast → DCF Valuation → Comparable Companies → Precedent Transactions → Sensitivity Analysis → M&A Analysis
+Financial Data
+      |
+      v
+Financial Statement Analysis
+      |
+      v
+Revenue Forecast
+      |
+      v
+DCF Valuation
+      |
+      +-----------------------+
+      |                       |
+      v                       v
+Comparable Companies   Precedent Transactions
+      |                       |
+      +-----------+-----------+
+                  |
+                  v
+           Valuation Summary
+                  |
+                  v
+         M&A Accretion/Dilution
 
 ## Financial Analysis
 
@@ -72,7 +95,7 @@ Key multiples include:
 - EV / EBITDA
 - P/E-style analysis
 
-Median multiples are calculated and applied to the target company's financial metrics.
+Median multiples are calculated and applied to target company financial metrics.
 
 ## Precedent Transactions
 
@@ -82,6 +105,16 @@ The precedent transactions module analyzes historical M&A transactions using:
 - EV / EBITDA
 
 Median transaction multiples are calculated to provide an acquisition-market valuation reference.
+
+## Valuation Summary
+
+The valuation summary combines:
+
+- DCF enterprise value
+- Comparable company enterprise value
+- Precedent transaction enterprise value
+
+The model also calculates an average enterprise value across the three approaches.
 
 ## DCF Sensitivity Analysis
 
@@ -124,41 +157,77 @@ Outputs include:
 
 ## Visualizations
 
-The project generates financial analysis charts in the `figures/` directory.
+The project generates financial analysis charts in the figures directory.
 
-### Revenue Forecast
+Revenue forecast:
 
-`figures/revenue_forecast.png`
+figures/revenue_forecast.png
 
-### DCF Sensitivity
+DCF sensitivity:
 
-`figures/dcf_sensitivity.png`
+figures/dcf_sensitivity.png
 
 ## Project Structure
 
-- `data/` — Financial and transaction datasets
-- `src/` — Financial modelling modules
-- `figures/` — Generated charts
-- `tests/` — Automated tests
-- `main.py` — End-to-end analysis pipeline
-- `PROJECT.md` — Project documentation
-- `requirements.txt` — Python dependencies
-- `.gitignore` — Git configuration
+investment-banking-deal-analytics/
+|
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+|
+├── data/
+│   ├── company_financials.csv
+│   ├── comparable_companies.csv
+│   └── precedent_transactions.csv
+|
+├── figures/
+|
+├── src/
+│   ├── __init__.py
+│   ├── financials.py
+│   ├── forecasting.py
+│   ├── dcf.py
+│   ├── comparables.py
+│   ├── precedents.py
+│   ├── merger_model.py
+│   ├── sensitivity.py
+│   ├── valuation_summary.py
+│   ├── visualization.py
+│   └── utils.py
+|
+├── tests/
+│   ├── test_dcf.py
+│   ├── test_financials.py
+│   ├── test_forecasting.py
+│   ├── test_comparables.py
+│   ├── test_merger_model.py
+│   ├── test_sensitivity.py
+│   ├── test_precedents.py
+│   ├── test_valuation_summary.py
+│   └── test_utils.py
+|
+├── main.py
+├── PROJECT.md
+├── README.md
+├── LICENSE
+├── requirements.txt
+└── .gitignore
 
 ## Modules
 
 | Module | Purpose |
 |---|---|
-| `financials.py` | Financial statement and FCF calculations |
-| `forecasting.py` | Revenue forecasting |
-| `dcf.py` | DCF valuation |
-| `comparables.py` | Trading comparable analysis |
-| `precedents.py` | Precedent transaction analysis |
-| `merger_model.py` | M&A accretion/dilution |
-| `sensitivity.py` | DCF sensitivity analysis |
-| `visualization.py` | Financial charts |
-| `utils.py` | Output formatting |
-| `main.py` | End-to-end analysis pipeline |
+| financials.py | Financial statement and FCF calculations |
+| forecasting.py | Revenue forecasting |
+| dcf.py | DCF valuation |
+| comparables.py | Trading comparable analysis |
+| precedents.py | Precedent transaction analysis |
+| merger_model.py | M&A accretion/dilution |
+| sensitivity.py | DCF sensitivity analysis |
+| valuation_summary.py | Combines valuation approaches |
+| visualization.py | Financial charts |
+| utils.py | Output formatting |
+| main.py | End-to-end analysis pipeline |
 
 ## Testing
 
@@ -170,19 +239,34 @@ Tests cover:
 - Financial metric calculations
 - Revenue forecasting
 - Comparable company calculations
+- Precedent transaction calculations
 - M&A modelling
+- DCF sensitivity analysis
+- Valuation summary
+- Utility functions
+
+GitHub Actions is configured to run the test suite automatically.
+
+## Key Skills Demonstrated
+
+- Python programming
+- Financial modelling
+- Corporate finance
+- Company valuation
+- DCF analysis
+- Comparable company analysis
+- M&A modelling
+- Sensitivity analysis
+- Data analysis
+- Financial visualization
+- Modular software design
+- Automated testing
 
 ## Purpose
 
-This project demonstrates practical programming applications in:
+This project demonstrates practical programming applications in investment banking and corporate finance.
 
-- Investment banking
-- Corporate finance
-- Financial modelling
-- Valuation
-- M&A analysis
-- Data analysis
-- Financial visualization
+It combines financial modelling with modular Python software development and automated testing.
 
 ## Disclaimer
 
