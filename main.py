@@ -26,6 +26,10 @@ from src.sensitivity import dcf_sensitivity
 
 from src.merger_model import calculate_merger
 
+from src.valuation_summary import (
+    build_valuation_summary,
+)
+
 from src.utils import (
     format_currency,
     format_percentage,
@@ -284,6 +288,60 @@ def main():
     plot_dcf_sensitivity(
         sensitivity,
         output_path="figures/dcf_sensitivity.png",
+    )
+
+    # --------------------------------------------------
+    # Valuation Summary
+    # --------------------------------------------------
+
+    valuation_summary = build_valuation_summary(
+        dcf_value=dcf["enterprise_value"],
+        comparable_value=(
+            comparable_value["ev_from_ebitda"]
+        ),
+        precedent_value=(
+            median_precedents["ev_ebitda"]
+            * target_ebitda
+        ),
+    )
+
+    print("\nVALUATION SUMMARY")
+    print("-" * 70)
+
+    print(
+        "DCF Enterprise Value:",
+        format_currency(
+            valuation_summary[
+                "dcf_enterprise_value"
+            ]
+        ),
+    )
+
+    print(
+        "Comparable Enterprise Value:",
+        format_currency(
+            valuation_summary[
+                "comparable_enterprise_value"
+            ]
+        ),
+    )
+
+    print(
+        "Precedent Enterprise Value:",
+        format_currency(
+            valuation_summary[
+                "precedent_enterprise_value"
+            ]
+        ),
+    )
+
+    print(
+        "Average Enterprise Value:",
+        format_currency(
+            valuation_summary[
+                "average_enterprise_value"
+            ]
+        ),
     )
 
     # --------------------------------------------------
