@@ -2,7 +2,7 @@
 
 ## Overview
 
-A Python-based investment banking analytics platform covering financial statement analysis, forecasting, valuation, comparable companies, precedent transactions, DCF sensitivity analysis, and M&A accretion/dilution.
+A Python-based investment banking analytics platform covering financial statement analysis, forecasting, valuation, comparable companies, precedent transactions, DCF sensitivity analysis, M&A accretion/dilution, financial visualization, and Excel reporting.
 
 ## Objectives
 
@@ -17,7 +17,9 @@ A Python-based investment banking analytics platform covering financial statemen
 - Perform DCF sensitivity analysis
 - Model M&A accretion/dilution
 - Generate financial visualizations
+- Export valuation analysis to Excel
 - Automate financial analysis with Python
+- Implement automated testing
 
 ## Technology
 
@@ -54,15 +56,21 @@ Comparable Companies     Precedent Transactions
                     |
                     v
           M&A Accretion/Dilution
+                    |
+                    v
+            Excel Valuation Report
 
 ## Financial Analysis
 
 The financial analysis module calculates:
 
+- Revenue
 - Gross profit
 - EBITDA
 - EBIT
 - NOPAT
+- Capital expenditure
+- Change in net working capital
 - Unlevered free cash flow
 
 ## Forecasting
@@ -147,6 +155,20 @@ Outputs include:
 - Pro forma EPS
 - Accretion / dilution
 
+## Excel Export
+
+The export module creates a structured Excel valuation workbook.
+
+The workbook can contain separate worksheets for:
+
+- Financials
+- Forecast
+- Comparable Companies
+- Precedent Transactions
+- DCF Sensitivity
+
+The export functionality uses pandas and OpenPyXL.
+
 ## Visualization
 
 The project generates:
@@ -171,6 +193,7 @@ Automated tests cover:
 - DCF sensitivity
 - Valuation summary
 - Utility functions
+- Excel export
 
 Testing is implemented using pytest.
 
@@ -200,6 +223,7 @@ investment-banking-deal-analytics/
 │   ├── sensitivity.py
 │   ├── valuation_summary.py
 │   ├── visualization.py
+│   ├── export.py
 │   └── utils.py
 |
 ├── tests/
@@ -211,7 +235,8 @@ investment-banking-deal-analytics/
 │   ├── test_sensitivity.py
 │   ├── test_precedents.py
 │   ├── test_valuation_summary.py
-│   └── test_utils.py
+│   ├── test_utils.py
+│   └── test_export.py
 |
 ├── main.py
 ├── PROJECT.md
@@ -228,12 +253,20 @@ investment-banking-deal-analytics/
 - Company valuation
 - DCF analysis
 - Comparable company analysis
+- Precedent transaction analysis
 - M&A modelling
 - Sensitivity analysis
 - Data analysis
 - Financial visualization
+- Excel automation
 - Modular software design
 - Automated testing
+
+## Purpose
+
+This project demonstrates practical programming applications in investment banking and corporate finance.
+
+The project combines financial modelling with Python software development, valuation analysis, M&A modelling, visualization, Excel reporting, and automated testing.
 
 ## Disclaimer
 
