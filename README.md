@@ -1,6 +1,6 @@
 # Investment Banking Deal Analytics & Valuation Platform
 
-A Python-based investment banking analytics platform for financial analysis, valuation, and M&A modelling.
+A Python-based investment banking analytics platform for financial analysis, valuation, M&A modelling, financial visualization, and Excel-based reporting.
 
 ## Overview
 
@@ -17,6 +17,7 @@ Key areas covered:
 - DCF sensitivity analysis
 - M&A accretion/dilution analysis
 - Financial visualization
+- Excel valuation workbook export
 - Automated testing
 
 ## Technology Stack
@@ -54,6 +55,9 @@ Comparable Companies   Precedent Transactions
                   |
                   v
          M&A Accretion/Dilution
+                  |
+                  v
+          Excel Valuation Report
 
 ## Financial Analysis
 
@@ -155,17 +159,31 @@ Outputs include:
 - Pro forma EPS
 - Accretion / dilution percentage
 
+## Excel Export
+
+The project includes an Excel export module for creating a structured valuation workbook.
+
+The workbook can contain separate sheets for:
+
+- Financials
+- Revenue Forecast
+- Comparable Companies
+- Precedent Transactions
+- DCF Sensitivity
+
+The Excel export is implemented using OpenPyXL through pandas.
+
 ## Visualizations
 
-The project generates financial analysis charts in the figures directory.
+The project generates financial analysis charts in the `figures/` directory.
 
 Revenue forecast:
 
-figures/revenue_forecast.png
+`figures/revenue_forecast.png`
 
 DCF sensitivity:
 
-figures/dcf_sensitivity.png
+`figures/dcf_sensitivity.png`
 
 ## Project Structure
 
@@ -193,6 +211,7 @@ investment-banking-deal-analytics/
 │   ├── sensitivity.py
 │   ├── valuation_summary.py
 │   ├── visualization.py
+│   ├── export.py
 │   └── utils.py
 |
 ├── tests/
@@ -204,7 +223,8 @@ investment-banking-deal-analytics/
 │   ├── test_sensitivity.py
 │   ├── test_precedents.py
 │   ├── test_valuation_summary.py
-│   └── test_utils.py
+│   ├── test_utils.py
+│   └── test_export.py
 |
 ├── main.py
 ├── PROJECT.md
@@ -217,17 +237,18 @@ investment-banking-deal-analytics/
 
 | Module | Purpose |
 |---|---|
-| financials.py | Financial statement and FCF calculations |
-| forecasting.py | Revenue forecasting |
-| dcf.py | DCF valuation |
-| comparables.py | Trading comparable analysis |
-| precedents.py | Precedent transaction analysis |
-| merger_model.py | M&A accretion/dilution |
-| sensitivity.py | DCF sensitivity analysis |
-| valuation_summary.py | Combines valuation approaches |
-| visualization.py | Financial charts |
-| utils.py | Output formatting |
-| main.py | End-to-end analysis pipeline |
+| `financials.py` | Financial statement and FCF calculations |
+| `forecasting.py` | Revenue forecasting |
+| `dcf.py` | DCF valuation |
+| `comparables.py` | Trading comparable analysis |
+| `precedents.py` | Precedent transaction analysis |
+| `merger_model.py` | M&A accretion/dilution |
+| `sensitivity.py` | DCF sensitivity analysis |
+| `valuation_summary.py` | Combines valuation approaches |
+| `visualization.py` | Financial charts |
+| `export.py` | Excel valuation workbook export |
+| `utils.py` | Output formatting |
+| `main.py` | End-to-end analysis pipeline |
 
 ## Testing
 
@@ -244,6 +265,7 @@ Tests cover:
 - DCF sensitivity analysis
 - Valuation summary
 - Utility functions
+- Excel export
 
 GitHub Actions is configured to run the test suite automatically.
 
@@ -259,6 +281,7 @@ GitHub Actions is configured to run the test suite automatically.
 - Sensitivity analysis
 - Data analysis
 - Financial visualization
+- Excel automation
 - Modular software design
 - Automated testing
 
@@ -266,7 +289,7 @@ GitHub Actions is configured to run the test suite automatically.
 
 This project demonstrates practical programming applications in investment banking and corporate finance.
 
-It combines financial modelling with modular Python software development and automated testing.
+It combines financial modelling, valuation analysis, M&A modelling, data analysis, visualization, Excel reporting, and modular Python software development.
 
 ## Disclaimer
 
