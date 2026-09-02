@@ -30,6 +30,10 @@ from src.valuation_summary import (
     build_valuation_summary,
 )
 
+from src.export import (
+    export_valuation_workbook,
+)
+
 from src.utils import (
     format_currency,
     format_percentage,
@@ -377,6 +381,26 @@ def main():
         format_percentage(
             merger["accretion_dilution"]
         ),
+    )
+
+    # --------------------------------------------------
+    # Excel Export
+    # --------------------------------------------------
+
+    export_valuation_workbook(
+        financials=financials,
+        forecast=forecast,
+        comparables=comparables,
+        precedents=precedents,
+        sensitivity=sensitivity,
+        output_path="figures/valuation_analysis.xlsx",
+    )
+
+    print("\nEXCEL EXPORT")
+    print("-" * 70)
+    print(
+        "Valuation workbook:",
+        "figures/valuation_analysis.xlsx"
     )
 
     print("\n" + "=" * 70)
