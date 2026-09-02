@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Investment Banking Deal Analytics & Valuation Platform"
+message: "If you use this project, please cite it as a portfolio and research software project."
+type: software
+authors:
+  - family-names: "Mostafaei"
+    given-names: "Sahand"
+repository-code: "https://github.com/sahandmostafaei/investment-banking-deal-analytics"
+license: MIT
+abstract: "A Python-based investment banking analytics platform implementing financial statement analysis, revenue forecasting, DCF valuation, comparable companies analysis, precedent transactions, M&A accretion/dilution analysis, sensitivity analysis, visualization, Excel reporting, and automated testing."
+keywords:
+  - investment banking
+  - financial modeling
+  - valuation
+  - DCF
+  - mergers and acquisitions
+  - Python
+  - quantitative finance
+  - financial analysis
