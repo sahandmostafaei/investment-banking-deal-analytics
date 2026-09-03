@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "investment-banking-deal-analytics"
+version = "1.0.0"
+description = "Python-based investment banking analytics platform for financial analysis, valuation, M&A modelling, sensitivity analysis, visualization, and Excel reporting."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+authors = [
+    {name = "Sahand Mostafaei"}
+]
+
+dependencies = [
+    "pandas",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "openpyxl"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
