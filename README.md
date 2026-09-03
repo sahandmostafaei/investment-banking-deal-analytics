@@ -1,5 +1,10 @@
 # Investment Banking Deal Analytics & Valuation Platform
 
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Tests](https://img.shields.io/badge/Tests-pytest-orange)
+![Finance](https://img.shields.io/badge/Domain-Investment%20Banking-purple)
+
 A Python-based investment banking analytics platform for financial analysis, valuation, M&A modelling, financial visualization, Excel reporting, and automated testing.
 
 ## Overview
@@ -216,6 +221,11 @@ Generated figures are stored in the `figures/` directory.
 
 investment-banking-deal-analytics/
 
+    .github/
+        CODEOWNERS
+        workflows/
+            tests.yml
+
     data/
         company_financials.csv
         comparable_companies.csv
@@ -252,11 +262,16 @@ investment-banking-deal-analytics/
         test_export.py
         test_utils.py
 
-    main.py
-    requirements.txt
-    .gitignore
+    CITATION.cff
+    CONTRIBUTING.md
+    LICENSE
+    Makefile
     PROJECT.md
     README.md
+    SECURITY.md
+    main.py
+    pyproject.toml
+    requirements.txt
 
 ## Modules
 
@@ -328,12 +343,12 @@ The test suite is designed to provide basic validation of the analytical functio
 ### Programming
 
 - Python
-- Object-oriented and functional programming concepts
 - Modular code architecture
 - Reusable functions
 - Data processing
 - File I/O
 - Automated testing
+- Project configuration
 
 ### Financial Analysis
 
@@ -358,6 +373,7 @@ The test suite is designed to provide basic validation of the analytical functio
 
 - pandas
 - NumPy
+- SciPy
 - Matplotlib
 - Numerical calculations
 - Scenario analysis
