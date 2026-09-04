@@ -84,7 +84,7 @@ The calculations provide the foundation for the subsequent valuation analysis.
 
 The forecasting module generates a five-year revenue projection using a configurable annual growth rate.
 
-The forecast is designed to demonstrate:
+The forecast demonstrates:
 
 - Time-series financial modelling
 - Forecast assumptions
@@ -112,7 +112,7 @@ The model uses a Gordon Growth terminal value approach.
 
 ## Comparable Companies Analysis
 
-The comparable companies module analyzes a peer group using publicly available-style financial metrics.
+The comparable companies module analyzes a peer group using financial and valuation metrics.
 
 The analysis calculates:
 
@@ -120,7 +120,7 @@ The analysis calculates:
 - Enterprise Value / EBITDA
 - Simplified equity valuation multiple
 
-Median trading multiples are then applied to target-company financial metrics to estimate implied valuation.
+Median trading multiples are applied to target-company financial metrics to estimate implied valuation.
 
 This demonstrates the programming structure behind a simplified trading comparables analysis.
 
@@ -133,7 +133,7 @@ For each transaction, the model calculates:
 - Transaction Value / Revenue
 - Transaction Value / EBITDA
 
-Median transaction multiples are calculated and applied to the target company's EBITDA and revenue to estimate an implied enterprise value.
+Median transaction multiples are calculated and applied to the target company's financial metrics to estimate implied enterprise value.
 
 This provides a simplified precedent transactions valuation framework.
 
@@ -192,7 +192,7 @@ A positive result represents accretion, while a negative result represents dilut
 
 ## Excel Valuation Workbook
 
-The project generates an Excel valuation workbook containing:
+The project can generate an Excel valuation workbook containing:
 
 - Historical financials
 - Revenue forecast
@@ -200,9 +200,9 @@ The project generates an Excel valuation workbook containing:
 - Precedent transactions
 - DCF sensitivity analysis
 
-Generated workbook:
+The generated workbook is written to:
 
-figures/valuation_analysis.xlsx
+`figures/valuation_analysis.xlsx`
 
 The workbook is created programmatically using pandas and openpyxl.
 
@@ -215,14 +215,18 @@ Current visual outputs include:
 - Historical and forecast revenue
 - DCF sensitivity visualization
 
-Generated figures are stored in the `figures/` directory.
+Generated figures are written to the `figures/` directory when the analysis pipeline is executed.
+
+Expected outputs include:
+
+- `figures/revenue_forecast.png`
+- `figures/dcf_sensitivity.png`
 
 ## Project Structure
 
 investment-banking-deal-analytics/
 
     .github/
-        CODEOWNERS
         workflows/
             tests.yml
 
@@ -230,6 +234,18 @@ investment-banking-deal-analytics/
         company_financials.csv
         comparable_companies.csv
         precedent_transactions.csv
+
+    docs/
+        README.md
+        methodology.md
+        architecture.md
+        usage.md
+        valuation_framework.md
+        roadmap.md
+        data_dictionary.md
+        testing.md
+        assumptions.md
+        financial_interpretation.md
 
     src/
         __init__.py
@@ -246,9 +262,7 @@ investment-banking-deal-analytics/
         utils.py
 
     figures/
-        revenue_forecast.png
-        dcf_sensitivity.png
-        valuation_analysis.xlsx
+        .gitkeep
 
     tests/
         test_dcf.py
@@ -262,6 +276,7 @@ investment-banking-deal-analytics/
         test_export.py
         test_utils.py
 
+    CODEOWNERS
     CITATION.cff
     CONTRIBUTING.md
     LICENSE
@@ -319,6 +334,22 @@ Creates financial analysis charts using Matplotlib.
 
 Provides reusable formatting functions for financial outputs.
 
+## Documentation
+
+Additional documentation is available in the `docs/` directory.
+
+Key documentation includes:
+
+- `methodology.md` — financial modelling and valuation methodology
+- `architecture.md` — software architecture and module design
+- `usage.md` — project usage and workflow
+- `valuation_framework.md` — valuation framework and methodologies
+- `data_dictionary.md` — dataset definitions and fields
+- `testing.md` — testing strategy
+- `assumptions.md` — model assumptions and limitations
+- `financial_interpretation.md` — interpretation of key financial and valuation outputs
+- `roadmap.md` — potential future enhancements
+
 ## Testing
 
 The project includes a pytest-based automated test suite covering the main analytical modules.
@@ -336,7 +367,29 @@ Tests cover:
 - Excel export
 - Financial formatting utilities
 
-The test suite is designed to provide basic validation of the analytical functions and improve code reliability.
+The test suite provides basic regression protection for the core analytical functions.
+
+The repository also includes GitHub Actions automation to run the test suite on pushes and pull requests targeting the `main` branch.
+
+## Code Quality
+
+The project uses standard Python development tooling and configuration.
+
+Included tooling includes:
+
+- `pytest` for automated testing
+- `black` through pre-commit for code formatting
+- `flake8` through pre-commit for static code-quality checks
+- `pyproject.toml` for project configuration
+- `Makefile` for common development commands
+
+## Reproducibility
+
+The project uses explicit input datasets and configurable modelling assumptions.
+
+The main analysis pipeline connects the financial analysis, forecasting, valuation, sensitivity, visualization, and reporting modules into a single workflow.
+
+The datasets included in the repository are synthetic and illustrative.
 
 ## Key Skills Demonstrated
 
@@ -349,6 +402,7 @@ The test suite is designed to provide basic validation of the analytical functio
 - File I/O
 - Automated testing
 - Project configuration
+- Financial data transformation
 
 ### Financial Analysis
 
@@ -384,6 +438,52 @@ The test suite is designed to provide basic validation of the analytical functio
 This project was developed as a portfolio demonstration of programming, financial modelling, valuation, and quantitative analysis skills relevant to investment banking and corporate finance.
 
 It is particularly intended to demonstrate the ability to translate financial concepts into reusable Python-based analytical workflows.
+
+The project also demonstrates how a quantitative and engineering-oriented programming background can be applied to financial modelling and transaction analysis.
+
+## Limitations
+
+The platform is intentionally simplified and is not intended to replicate a production investment banking model.
+
+Key limitations include:
+
+- Synthetic financial datasets
+- Simplified forecasting assumptions
+- Simplified DCF construction
+- Simplified comparable-company methodology
+- Simplified precedent transaction analysis
+- Simplified M&A financing mechanics
+- Limited peer and transaction samples
+- No live market-data integration
+
+These limitations are documented in greater detail in `docs/assumptions.md`.
+
+## Future Development
+
+Potential future enhancements include:
+
+- Dynamic operating forecasts
+- Detailed three-statement modelling
+- WACC construction
+- Capital structure modelling
+- Debt schedules
+- Working capital schedules
+- Scenario analysis
+- Expanded comparable-company datasets
+- More detailed precedent transaction adjustments
+- Advanced M&A financing mechanics
+- Live market-data integration
+- Additional valuation methodologies
+
+## License
+
+This project is released under the MIT License.
+
+See `LICENSE` for details.
+
+## Citation
+
+If this project is referenced or reused, citation information is provided in `CITATION.cff`.
 
 ## Disclaimer
 
