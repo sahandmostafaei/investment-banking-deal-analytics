@@ -31,3 +31,17 @@ jobs:
       - name: Run tests
         run: |
           pytest
+
+      - name: Run investment banking analysis
+        run: |
+          python main.py
+
+      - name: Upload financial analysis outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: investment-banking-analysis-outputs
+          path: |
+            figures/revenue_forecast.png
+            figures/dcf_sensitivity.png
+            figures/valuation_analysis.xlsx
+          if-no-files-found: error
